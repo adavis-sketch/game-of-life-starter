@@ -39,6 +39,9 @@ int countNeighbors(int y, int x) {
 void showGrid() {
   // your code here
   // use square() to represent each cell
+  for (int i = 0; i < 50; i++){
+    for (int i )
+  }
   // use fill(r, g, b) to control color: black for empty, red for filled (or alive)
   // each square (cell) has a width and height of SPACING. 
   // you will need to calculate the x and y position as you loop through the grid
