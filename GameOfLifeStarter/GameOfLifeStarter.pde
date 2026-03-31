@@ -11,11 +11,22 @@ void setup() {
   grid = new int[height / SPACING][width / SPACING];
 
   // STEP 1 - Populate initial grid (you may want to use Arrays.toString to check it)
+  for (int i = 0; i < grid.length; i++){
+    for (int j = 0; j < grid[0].length; j++){
+      if (Math.random() < DENSITY){
+        grid[i][j] = 1;
+      }
+      else{
+        grid[i][j] = 0;
+      }
+    }
+  }
 
 }
 
 void draw() {
-  showGrid(); // STEP 2 - Implement this method so you can see your 2D array
+  showGrid(); 
+  // STEP 2 - Implement this method so you can see your 2D array
   // grid = calcNextGrid(); // uncomment this after you get showGrid() working
 }
 
@@ -39,9 +50,20 @@ int countNeighbors(int y, int x) {
 void showGrid() {
   // your code here
   // use square() to represent each cell
-  for (int i = 0; i < 50; i++){
-    for (int i )
+  for (int i = 0; i < grid.length; i++){
+    for (int j = 0; j < grid[0].length; j++){
+      if (grid[i][j] == 0){
+        square(j * SPACING, i * SPACING, SPACING);
+        fill(0, 0, 0);
+      }
+      else { 
+        square(j * SPACING, i * SPACING, SPACING);
+        fill(255, 0, 0);
+      }
+    }
   }
+  
+
   // use fill(r, g, b) to control color: black for empty, red for filled (or alive)
   // each square (cell) has a width and height of SPACING. 
   // you will need to calculate the x and y position as you loop through the grid
